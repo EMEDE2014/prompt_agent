@@ -29,7 +29,7 @@ const Feed = () => {
       setPosts(data);
     };
     fetchPosts();
-  });
+  }, []);
 
   return (
     <section className="feed">
@@ -44,7 +44,7 @@ const Feed = () => {
         />
       </form>
 
-      <PromptCard data={post} handleTagClick />
+      <PromptCardList data={post} handleTagClick />
     </section>
   );
 };
