@@ -3,15 +3,16 @@ import Prompt from "@/models/prompt";
 
 interface Props {
   params: {
-    id: string;
+    _id: string;
   };
 }
 export const GET = async (request: Request, { params }: Props) => {
+  console.log(params._id, "Estutado");
   try {
     await connectToDB();
 
     const prompts = await Prompt.find({
-      creator: params?.id,
+      creator: params?._id,
     }).populate("creator");
 
     return new Response(JSON.stringify(prompts), { status: 200 });

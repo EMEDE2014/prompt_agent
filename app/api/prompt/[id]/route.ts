@@ -8,7 +8,7 @@ interface Props {
 }
 
 // GET (read)
-export const GET = async (request: Request, { params }) => {
+export const GET = async (request: Request, { params }: Props) => {
   try {
     await connectToDB();
 
